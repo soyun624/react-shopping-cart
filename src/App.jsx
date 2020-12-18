@@ -59,7 +59,7 @@ class App extends React.Component {
   }
 
   removeFromCart = (product) => {
-    const cartItems = this.state.cartItems.slice().filter((x) => x._id != product._id);
+    const cartItems = this.state.cartItems.slice().filter((x) => x._id !== product._id);
     this.setState({
       cartItems: cartItems,
     });
