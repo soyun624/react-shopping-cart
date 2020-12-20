@@ -5,24 +5,25 @@ const mongoose = require("mongoose");
 const shortid = require("shortid");
 var path = __dirname + '/server/build';
 
-const app = express();
-app.use(express.static(path));
-
-var corsOptions = {
-  origin: "http://localhost:81"
-};
-app.use(cors(corsOptions));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
 var dbUri = process.env.MONGOLAB_URI;
 //const dbUri = "mongodb://localhost/react-shopping-cart-db";
 
 mongoose.connect(dbUri, {
   useNewUrlParser: true,
-  useCreateindex: true,
   useUnifiedTopology: true,
+}).catch(e => {
+  console.log("MONGO ERROR", e);
 });
+
+const app = express();
+app.use(express.static(path));
+
+var corsOptions = {
+  origin: "http://localhost:8081"
+};
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const Product = mongoose.model(
   "products",
@@ -33,7 +34,8 @@ const Product = mongoose.model(
     image: String,
     price: Number,
     availableSizes: [String],
-  })
+  }),
+  "products"
 );
 
 app.get("/api/products", async (req, res) => {
@@ -62,7 +64,7 @@ app.get('/', function (req,res) {
 // app.listen(port, () => console.log("serve at http://localhost:5000"));
 
 // set port, listen for requests
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
