@@ -6,7 +6,6 @@ const shortid = require("shortid");
 var path = __dirname + '/server/build';
 
 var dbUri = process.env.MONGOLAB_URI;
-//const dbUri = "mongodb://localhost/react-shopping-cart-db";
 
 mongoose.connect(dbUri, {
   useNewUrlParser: true,
