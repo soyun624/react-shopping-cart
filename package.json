@@ -27,7 +27,7 @@
     "start": "node server.js",
     "server": "server/yarn install",
     "build": "react-scripts build",
-    "postbuild": "rm -Rf trunk server/build && mv build/ server/ && exit 1",
+    "postbuild": "rm -Rf trunk server/build && mv build/ server/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
