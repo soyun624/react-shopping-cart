@@ -23,9 +23,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "prestart": "cd server && npm install",
+    "prestart": "cd server && yarn install",
     "start": "node server.js",
-    "server": "server/npm i",
+    "server": "server/yarn install",
     "build": "react-scripts build",
     "postbuild": "rm -Rf trunk server/build && mv build/ server/ && exit 1",
     "test": "react-scripts test",
