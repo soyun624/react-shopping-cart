@@ -5,7 +5,16 @@ Project was developed to CICCC WMAD Course. For educational purpose.
 Website:
 https://react-and-redux-shopping-cart.herokuapp.com/
 
-## Available Scripts
+## Tech Stack
+
+- React.Js
+- Redux
+- Express
+- MongoDb
+- Heroku
+
+
+## Scripts
 
 In the project directory, you can run:
 
@@ -22,30 +31,29 @@ The 'build' folder must be moved to server folder!
 Note: There is a command in package.json to move it.
 
 
-## mongoDB running on cloud
+## Database
 
-MongoDB Atlas
+MongoDB Atlas:
+
 https://www.mongodb.com/cloud
 
 
 ## Deployment on Heroku
 
 Follow heroku Client instalation instructions:
+
 https://devcenter.heroku.com/articles/heroku-cli
+
 
 Run commands using heroku client:
 
-**heroku login**
+`heroku login`
 
-**git push heroku main**
+`git push heroku main`
 
 Config MONGOLAB_URI parameter:
-**heroku config:set MONGOLAB_URI=mongodb://`<dbuser>`:`<dbpassword>`@cluster0.4uxi5.mongodb.net/`<dbname>`?retryWrites=true&w=majority**
 
-**heroku ps:scale web=1**
+`heroku config:set MONGOLAB_URI=mongodb://`<dbuser>`:`<dbpassword>`@cluster0.4uxi5.mongodb.net/`<dbname>`?retryWrites=true&w=majority`
 
-
-## Tech Stack
-
-**`React.Js` `Redux` `Express` `MongoDb`**
+`heroku ps:scale web=1`
 
