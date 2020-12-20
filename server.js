@@ -15,7 +15,10 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://localhost/react-shopping-cart-db", {
+var dbUri = process.env.MONGOLAB_URI;
+//const dbUri = "mongodb://localhost/react-shopping-cart-db";
+
+mongoose.connect(dbUri, {
   useNewUrlParser: true,
   useCreateindex: true,
   useUnifiedTopology: true,
