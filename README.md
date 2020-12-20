@@ -40,7 +40,12 @@ Run commands using heroku client:
 **git push heroku main**
 
 Config MONGOLAB_URI parameter:
-heroku config:set MONGOLAB_URI=mongodb://`<dbuser>`:`<dbpassword>`@cluster0.4uxi5.mongodb.net/`<dbname>`?retryWrites=true&w=majority";
+**heroku config:set MONGOLAB_URI=mongodb://`<dbuser>`:`<dbpassword>`@cluster0.4uxi5.mongodb.net/`<dbname>`?retryWrites=true&w=majority**
 
 **heroku ps:scale web=1**
+
+
+## Tech Stack
+
+**`React.Js` `Redux` `Express` `MongoDb`**
 
