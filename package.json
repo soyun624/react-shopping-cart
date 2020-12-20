@@ -24,7 +24,7 @@
   },
   "scripts": {
     "prestart": "cd server && yarn install",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "server": "server/yarn install",
     "build": "react-scripts build",
     "postbuild": "rm -Rf trunk server/build && mv build/ server/",
