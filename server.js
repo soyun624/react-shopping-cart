@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static(path));
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:81"
 };
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
@@ -62,7 +62,7 @@ app.get('/', function (req,res) {
 // app.listen(port, () => console.log("serve at http://localhost:5000"));
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 80;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
